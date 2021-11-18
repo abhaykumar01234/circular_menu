@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --side: 35rem;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(45deg, #8460ed, #ff1252);
+}
+
+.menu {
+  position: relative;
+  width: var(--side);
+  height: var(--side);
+}
+
+.menu li {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  -webkit-transform-origin: calc(var(--side)/2);
+          transform-origin: calc(var(--side)/2);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition-delay: calc(0.1s * var(--i));
+          transition-delay: calc(0.1s * var(--i));
+  -webkit-transform: rotate(0deg) translateX(calc(var(--side)/2.5));
+          transform: rotate(0deg) translateX(calc(var(--side)/2.5));
+}
+
+.menu li a {
+  width: calc(var(--side)/5);
+  height: calc(var(--side)/5);
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transform: rotate(calc(360deg / -8 * var(--i)));
+          transform: rotate(calc(360deg / -8 * var(--i)));
+  color: #333;
+  font-size: calc(var(--side)/12.5);
+}
+
+.menu .toggle {
+  position: absolute;
+  width: calc(var(--side)/3.33);
+  height: calc(var(--side)/3.33);
+  background: #fff;
+  z-index: 100;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  font-size: calc(var(--side)/6.25);
+  -webkit-transition: -webkit-transform .75s ease-in-out;
+  transition: -webkit-transform .75s ease-in-out;
+  transition: transform .75s ease-in-out;
+  transition: transform .75s ease-in-out, -webkit-transform .75s ease-in-out;
+}
+
+.menu.active li {
+  -webkit-transform: rotate(calc(360deg / 8 * var(--i)));
+          transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.menu.active .toggle {
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
