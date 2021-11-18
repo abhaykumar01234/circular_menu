@@ -4,8 +4,14 @@
     box-sizing: border-box;
 }
 
-:root{
-    --side: 35rem;
+.menu{
+    --side: 16rem;
+}
+
+@media (min-width: 768px){
+    .menu{
+        --side: 35rem;
+    }
 }
 
 .center{
@@ -17,6 +23,7 @@
 body{
     min-height: 100vh;
     background: linear-gradient(45deg, #8460ed, #ff1252);
+    flex-direction: column;
 }
 
 .menu{
